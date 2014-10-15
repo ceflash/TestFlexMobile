@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" applicationDPI="160" xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			[Bindable]
+			private var arr:ArrayCollection = new ArrayCollection([
+				{label:'aaaaa',value:123,text:'aaaaa',boolean:true},
+				{label:'eeee',value:0.134,text:'dddd',boolean:false},
+				{label:'rrrrr',value:123,text:'vvvv',boolean:null}
+			]);
+		]]>
+	</fx:Script>
+	<s:Button x="36" y="52" label="Button"/>
+	<s:CheckBox x="161" y="63" label="CheckBox"/>
+	<s:Image x="357" y="63"/>
+	<s:Label x="68" y="141" text="Label"/>
+	<s:List x="164" y="141"></s:List>
+	<s:RadioButton x="357" y="170" label="Radio"/>
+	<s:TextArea x="346" y="230"/>
+	<s:TextInput x="36" y="335"/>
+	<s:DataGrid x="362" y="400" width="200" height="200" dataProvider="{arr}">
+		
+		<s:columns>
+			<mx:ArrayList>
+				<s:GridColumn headerText="aaaaa" dataField="label"/>
+				<s:GridColumn headerText="bbbbb" dataField="text"/>
+			</mx:ArrayList>
+		</s:columns>	
+	</s:DataGrid>
+	
+</s:Application>
